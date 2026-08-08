@@ -1,0 +1,6 @@
+# Chatterbox local TTS (CPU). Use Python 3.10–3.11.
+chatterbox-tts
+fastapi
+uvicorn
+numpy
+soundfile

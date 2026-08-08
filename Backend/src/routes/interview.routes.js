@@ -12,7 +12,14 @@ const interviewRouter = express.Router()
  * @description generate new interview report on the basis of user self description,resume pdf and job description.
  * @access private
  */
-interviewRouter.post("/", authMiddleware.authUser, upload.single("resume"), interviewController.generateInterViewReportController)
+interviewRouter.post("/", authMiddleware.authUser, (req, res, next) => {
+    upload.single("resume")(req, res, (err) => {
+        if (err) {
+            return res.status(400).json({ message: err.message || "File upload failed." })
+        }
+        next()
+    })
+}, interviewController.generateInterViewReportController)
 
 /**
  * @route GET /api/interview/report/:interviewId

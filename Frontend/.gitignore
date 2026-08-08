@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# MediaPipe wasm + model binaries (~15 MB, restore via README)
+public/mediapipe

@@ -1,2 +1,8 @@
 /.env
 /node_modules
+/tts/.venv
+/tts/**/__pycache__
+/.tts-cache
+*.mp3
+tts-debug.mp3
+/sujay-resume.pdf
